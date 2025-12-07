@@ -1,0 +1,324 @@
+
+
+:root{
+
+    --lyra-main-blue:#11274A;
+    --lyra-main-beige:#D3CAB0;
+    --lyra-text-dark:#121618;
+    --lyra-text-light:#E7E9EB;
+
+}
+
+
+
+.cs-hero{
+  height: 100vh;
+  width:auto;
+  background-position: center;
+  background-size: cover;
+  background-image: url(/assets/IMAGES/LYRA/FOTO/Billboard_48x14_ft_Mockup_3.webp);
+  margin-bottom: 15vh;
+}
+
+
+
+.cs-project-description{
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  column-gap: var(--gap-medium);
+  margin-bottom: 15vh;
+}
+
+
+
+.cs-logo-original{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  background-color: var(--lyra-main-blue);
+  margin-bottom: 15vh;
+}
+
+.cs-logo-original svg{
+  max-width: 75%;
+  height: auto;
+  fill: var(--lyra-text-light);
+}
+
+
+
+.cs-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  margin-bottom: 15vh;
+}
+
+.cs-logo-grid .item {
+  padding: 40px;
+  display: flex;              
+  align-items: center;
+  justify-content: center;
+  width: 100;
+  height: 70vh;
+}
+
+.cs-logo-grid .item svg {
+  width:100%;        
+  height: auto;       
+  max-width: 300px;   
+  display: block;
+}
+
+.cs-logo-grid .item.one {
+  background-color: var(--lyra-main-blue);
+}
+.cs-logo-grid .item.one svg{
+  fill: var(--lyra-text-light);
+}
+
+.cs-logo-grid .item.two {
+  background-color: var(--lyra-text-light);
+}
+.cs-logo-grid .item.two svg{
+  fill: var(--lyra-main-blue);
+}
+
+
+
+.split-section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 15vh;
+}
+
+/* Tekstualni dio */
+.split-text {
+  flex: 1;
+}
+
+.split-title {
+  margin-bottom: 24px;
+}
+
+.split-body {
+  max-width: 520px;
+}
+
+/* Slika */
+.split-image {
+  flex: 1;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.feature-grid{
+  margin-bottom: 15vh;
+}
+
+.lyra-creation{
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.lyra-description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--gap-medium);
+  margin-bottom: 15vh;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 stupca na desktopu */
+  gap: 32px;
+}
+
+/* pojedini item */
+.feature-item {
+  text-align: center;
+}
+
+/* kvadratna slika – 1:1 ratio, responsivna */
+.feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* kvadrat */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--gap-small);
+}
+
+.feature-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* cropa po potrebi */
+  display: block;
+}
+
+/* tekst ispod slike */
+.feature-text {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Large full-width images (1st + 4th) */
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(4) {
+  grid-column: 1 / -1;
+  height: 100vh;
+}
+
+.gallery-item:nth-child(1) img,
+.gallery-item:nth-child(4) img {
+  object-position: center;
+}
+
+/* Regular height items */
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(6) {
+  height: 100vh;
+}
+
+.gallery-item:nth-child(2) img,
+.gallery-item:nth-child(3) img,
+.gallery-item:nth-child(5) img,
+.gallery-item:nth-child(6) img {
+  object-position: center top;
+}
+
+
+
+
+
+
+@media (max-width: 980px) {
+
+  .columns {
+    flex-direction: column; 
+    gap: 24px;     
+    max-width: fit-content;       
+  }
+
+  .column {
+    max-width: fit-content;
+  }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .cs-project-description{
+    column-gap: var(--gap-small);
+    max-width: 95%;
+  }
+
+
+
+  .cs-logo-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .columns {
+    flex-direction: column; 
+    gap: 24px;     
+    max-width: fit-content;       
+  }
+
+  .column {
+    max-width: fit-content;
+  }
+
+
+    .split-section-inner {
+    flex-direction: column;     /* stackanje jedan ispod drugog */
+    gap: 32px;
+  }
+
+  .split-text {
+    order: 1;                   /* tekst prvi */
+  }
+
+  .split-image {
+    order: 2;                   /* slika druga */
+  }
+
+
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+
+
+  .gallery {
+    grid-template-columns: 1fr;  /* 1 stupac na mobile */
+    row-gap: 24px;
+  }
+
+  /* Reset grid-span za 1. i 4. */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4) {
+    grid-column: auto;        /* više ne idu preko 2 stupca */
+    height: auto;             /* visina po slici */
+  }
+
+  /* Sve slike rade isto kao normalno */
+  .gallery-item:nth-child(1) img,
+  .gallery-item:nth-child(4) img,
+  .gallery-item:nth-child(2) img,
+  .gallery-item:nth-child(3) img,
+  .gallery-item:nth-child(5) img,
+  .gallery-item:nth-child(6) img {
+    height: auto;
+    object-position: center;
+  }
+
+  /* Ostali itemi također dobivaju auto-visinu */
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(6) {
+    height: auto;
+  }
+
+}

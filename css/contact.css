@@ -1,0 +1,245 @@
+/* ==========================================================================
+   CONTACT PAGE — specifični stilovi
+   ========================================================================== */
+
+/* Sekcija kontakta – usklađeni razmaci sa ostatkom sajta */
+#contact {
+  padding-top: var(--section-m);
+  padding-bottom: var(--section-m);
+}
+
+/* ==========================================================================
+   DISCLAMER — poravnanje s headerom i responzivna veličina
+   ========================================================================== */
+
+.description {
+  width: 100%;
+  padding-left: var(--pad-m);
+  padding-right: var(--pad-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.disclamer {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--black);
+  max-width: 900px;
+  line-height: 1.3;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* usklađivanje paddinga s .container iz styles.css */
+@media (min-width: 768px) {
+  .description {
+    padding-left: var(--pad-t);
+    padding-right: var(--pad-t);
+  }
+}
+
+@media (min-width: 1200px) {
+  .description {
+    padding-left: var(--pad-d);
+    padding-right: var(--pad-d);
+  }
+}
+
+/* malo finije skaliranje na manjim ekranima */
+@media (max-width: 768px) {
+  .disclamer {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+}
+
+/* ==========================================================================
+   LAYOUT FORME
+   ========================================================================== */
+
+/* Wrapper unutar .container – centriraj formu */
+.contact.contact--home {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Kartica forme */
+.contact .card {
+  background: #fff;
+  border: 1px solid rgba(11, 11, 12, .08);
+  border-radius: var(--rd-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Razmakni polja */
+.sp-1 {
+  height: 8px;
+}
+
+/* CTA u formi — bez ikone (za slučaj da se doda u budućnosti) */
+.contact .cta svg {
+  display: none;
+}
+
+/* ==========================================================================
+   FANCY CONTACT FORM (floating label)
+   ========================================================================== */
+
+.fancy-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: clamp(24px, 4vw, 48px);
+  border: 3px solid var(--cold-blue);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.495);
+  transition: all .2s ease;
+}
+
+.fancy-card:hover {
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.7);
+}
+
+.fancy-title {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.3;
+  color: var(--black);
+}
+
+.fancy-input {
+  position: relative;
+  display: block;
+  margin-bottom: clamp(20px, 2.6vw, 32px);
+}
+
+.fancy-input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 2.5px solid currentColor;
+  padding: clamp(14px, 1.8vw, 18px) clamp(12px, 1.5vw, 16px);
+  color: var(--black);
+  background: transparent;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  transition: all .2s ease;
+}
+
+.fancy-input__field--textarea {
+  min-height: clamp(140px, 18vh, 200px);
+  resize: vertical;
+}
+
+.fancy-input__field::placeholder {
+  color: transparent; /* potrebno za float labelu */
+}
+
+.fancy-input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: clamp(8px, 1vw, 10px) clamp(6px, .8vw, 8px);
+  margin: clamp(10px, 1.4vw, 14px) clamp(8px, 1vw, 12px);
+  white-space: nowrap;
+  transform: translate(0, 0);
+  transform-origin: 0 0;
+  background: #fff;
+  transition: transform 120ms ease-in, color .15s ease;
+  font-weight: 700;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.2;
+  border-radius: 6px;
+}
+
+/* Float label kad je fokusirano ili ispunjeno */
+.fancy-input__field:focus + .fancy-input__label,
+.fancy-input__field:not(:placeholder-shown) + .fancy-input__label,
+.fancy-input.has-value .fancy-input__label {
+  transform: translate(8px, -72%) scale(.84);
+  color: var(--warm-blue);
+}
+
+/* Fokus stanje */
+.fancy-input__field:focus {
+  border-color: var(--cold-blue);
+  box-shadow: 0 0 0 5px rgba(58, 141, 255, .18);
+  background: #fff;
+  outline: none;
+}
+
+/* Validacija */
+.fancy-input.is-invalid .fancy-input__field {
+  border-color: #d93025;
+  box-shadow: 0 0 0 5px rgba(217, 48, 37, .15);
+}
+
+.fancy-input.is-invalid .fancy-input__label {
+  color: #d93025;
+}
+
+/* Gumbi */
+.fancy-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2.4vw, 18px);
+  margin-top: clamp(18px, 3vw, 28px);
+  padding:12px 24px;
+  border-radius:4px;
+  background:var(--cold-blue);
+  box-shadow:var(--shadow-sm);
+  transition:all .2s ease;
+}
+
+.fancy-button-group .cta--block{
+  color:#fff;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size: 24px;
+  background-color: black;
+  border: none;
+}
+
+.fancy-button-group:hover{
+  transform:translateY(-3px);
+}
+
+/* Status poruka */
+.fancy-status {
+  margin: clamp(12px, 1.8vw, 16px) 0 0;
+  font-size: clamp(13px, 1.3vw, 15px);
+  color: #6b6b76;
+}
+
+/* Mobilni polish */
+@media (max-width: 600px) {
+  .fancy-card {
+    padding: clamp(20px, 5vw, 32px);
+    box-shadow: 4px 4px 0 rgba(58, 141, 255, .3);
+  }
+
+  .fancy-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .fancy-input__field {
+    font-size: 15px;
+    padding: 14px 12px;
+  }
+
+  .fancy-input__label {
+    font-size: 14px;
+  }
+
+  .fancy-btn-reset,
+  .fancy-button-group .cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

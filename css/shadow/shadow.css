@@ -1,0 +1,270 @@
+
+
+:root{
+
+    /*  COLORS  */
+
+    --main-dark:#4A3325;
+    --main-mid:#B58A65;
+    --main-light:#E6DCC7;
+    --muted-green:#7F8A60;
+    --accent:#7FA05F;
+    --accent-hover:#9BBF69;
+    --shadow-black:#171816;
+    --shadow-white:#F0F4E9;
+
+}
+
+
+.cs-hero{
+  height: 100vh;
+  width:auto;
+  background-position: center;
+  background-size: cover;
+  background-image: url(/assets/IMAGES/SHADOW/FOTO/Glass\ Coffee\ Cup\ Mockup.webp);
+  margin-bottom: 15vh;
+}
+
+
+
+.cs-project-description{
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  column-gap: var(--gap-small);
+  margin-bottom: 15vh;
+}
+
+
+
+.cs-logo-original{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  background-color: var(--main-dark);
+  margin-bottom: 15vh;
+}
+
+.cs-logo-original svg{
+  max-width: 75%;
+  height: auto;
+  fill: var(--main-light);
+}
+
+
+
+.cs-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  margin-bottom: 15vh;
+}
+
+.cs-logo-grid .item {
+  padding: 40px;
+  display: flex;              
+  align-items: center;
+  justify-content: center;
+  width: 100;
+  height: 70vh;
+}
+
+.cs-logo-grid .item svg {
+  width:100%;        
+  height: auto;       
+  max-width: 300px;   
+  display: block;
+}
+
+.cs-logo-grid .item.one {
+  background-color: var(--main-dark);
+}
+.cs-logo-grid .item.one svg{
+  fill: var(--main-light);
+}
+
+.cs-logo-grid .item.two {
+  background-color: var(--main-light);
+}
+.cs-logo-grid .item.two svg{
+  fill: var(--main-dark);
+}
+
+.cs-logo-grid .item.three {
+  background-color: var(--accent);
+}
+.cs-logo-grid .item.three svg{
+  fill: var(--main-light);
+}
+
+
+
+.split-section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 15vh;
+}
+
+/* Tekstualni dio */
+.split-text {
+  flex: 1;
+}
+
+.split-title {
+  margin-bottom: 24px;
+}
+
+.split-body {
+  max-width: 520px;
+}
+
+/* Slika */
+.split-image {
+  flex: 1;
+  opacity: .5;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.shadow-creation{
+  color: white;
+  background-color: black;
+}
+
+.shadow-description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--gap-medium);
+  margin-bottom: 15vh;
+}
+
+.creation-display{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15vh;
+  
+}
+
+.creation-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.creation-image img{
+  max-width: 80%;
+  align-self: center;
+}
+
+.logo-original {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;    /* vertikalno centriranje */
+  justify-content: center;
+  margin-bottom: 15vh; /* horizontalno centriranje */
+}
+
+.logo-original svg  {
+  width: auto;      /* zadrži proporcije */
+  height: 100%;     /* SVG prati visinu kontejnera */
+  display: block;
+  fill: white;
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Full-width rows: 1, 4, 7 */
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(7) {
+  grid-column: 1 / -1;
+  height: 100vh;
+}
+
+.gallery-item:nth-child(1) img,
+.gallery-item:nth-child(4) img,
+.gallery-item:nth-child(7) img {
+  object-position: center;
+}
+
+/* Standard height items */
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(8),
+.gallery-item:nth-child(9) {
+  height: 100vh;
+  object-position: center top;
+}
+
+
+
+
+
+/*====MOBILE====*/
+
+
+@media (max-width: 768px) {
+
+  .cs-project-description{
+    gap: var(--gap-small);
+    max-width: 95%;
+  }
+
+
+
+   .cs-logo-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .gallery {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .gallery-item,
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(7) {
+    height: 60vh;
+    grid-column: auto;
+  }
+
+}
