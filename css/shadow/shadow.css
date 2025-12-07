@@ -21,7 +21,7 @@
   width:auto;
   background-position: center;
   background-size: cover;
-  background-image: url(../assets/IMAGES/SHADOW/FOTO/Glass\ Coffee\ Cup\ Mockup.webp);
+  background-image: url("/assets/IMAGES/SHADOW/FOTO/Glass\ Coffee\ Cup\ Mockup.webp");
   margin-bottom: 15vh;
 }
 

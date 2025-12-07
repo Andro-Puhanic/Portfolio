@@ -16,7 +16,7 @@
   width:auto;
   background-position: center;
   background-size: cover;
-  background-image: url(../assets/IMAGES/LYRA/FOTO/Billboard_48x14_ft_Mockup_3.webp);
+  background-image: url("/assets/IMAGES/LYRA/FOTO/Billboard_48x14_ft_Mockup_3.webp");
   margin-bottom: 15vh;
 }
 
