@@ -16,7 +16,7 @@
   width:auto;
   background-position: center top;
   background-size: cover;
-  background-image: url("/assets/IMAGES/JAMSTVO/FOTO/Brochure_Inner_Page_Mockup.webp");
+  background-image: url("../../assets/IMAGES/JAMSTVO/FOTO/Brochure_Inner_Page_Mockup.webp");
   margin-bottom: 15vh;
 }
 
