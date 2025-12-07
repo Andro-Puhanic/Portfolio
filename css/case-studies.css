@@ -1,0 +1,405 @@
+/* ==========================================================================
+   CASE STUDY – specifični stilovi (izolirani od globalnih)
+   ========================================================================== */
+
+/* Osnova stranice */
+.case-body { background: #fff; }
+
+/* ---------------------------------------
+   HERO (isti vizualni jezik kao na Home)
+---------------------------------------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  min-height:70vh;
+  padding:64px 0;
+}
+.hero .inner{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:48px;
+  align-items:center;
+}
+.hero-visual{position:relative;height:360px}
+.hero .tagline{margin-bottom:16px;font-family:var(--font-display);font-weight:600;}
+.hero .h1{margin:0 0 20px;font-family:var(--font-display);font-weight:800;}
+.hero p{max-width:60ch;margin-bottom:24px}
+.hero-actions{display:flex;gap:20px;flex-wrap:wrap}
+
+/* Parallax “waves” */
+.wave{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(40px);
+  opacity:.35;
+  pointer-events:none;
+}
+.wave.blue{background:radial-gradient(closest-side,var(--cold-blue),transparent 70%)}
+.wave.aqua{background:radial-gradient(closest-side,var(--warm-blue),transparent 70%)}
+.w1{width:520px;height:520px;top:-120px;left:-120px}
+.w2{width:420px;height:420px;bottom:-100px;right:-80px}
+
+/* ---------------------------------------
+   PLACEHOLDER vizuali
+---------------------------------------- */
+.ph{
+  background: var(--placeholder);
+  border-radius: var(--rd-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.ph::after{
+  content: "SLIKA";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #111;
+  font-weight: 800;
+  letter-spacing: .25em;
+  opacity: .4;
+}
+
+/* ---------------------------------------
+   SECTION HEAD – usklađeno s root index.css
+---------------------------------------- */
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin:0;
+  padding-bottom:var(--pad-m);
+}
+.section-head .kicker{ color:#50505A; max-width:70ch; }
+
+@media (min-width:640px){
+  .section-head{ padding-bottom: var(--pad-t); }
+}
+@media (min-width:1200px){
+  .section-head{ padding-bottom: var(--pad-d); }
+}
+
+/* ---------------------------------------
+   SHOWCASE – svijetla pozadina, TAMNE kartice
+   (razmaci/padding usklađeni s rootom)
+---------------------------------------- */
+.showcase-dark{
+  background: linear-gradient(180deg, var(--soft-sand), #fff);
+  color: var(--black);
+  padding-top:var(--pad-m);
+  padding-bottom:var(--pad-m);
+}
+@media (min-width:1200px){
+  .showcase-dark{
+    padding-top:var(--pad-d);
+    padding-bottom:var(--pad-d);
+  }
+}
+
+.dark-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:24px;
+}
+
+/* Full-image kartice – TAMNE na svijetloj podlozi */
+.tile-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:4px;
+  aspect-ratio: 1 / 1;
+  background:#0f1115;                          /* tamna ploha */
+  box-shadow: var(--shadow-md);                 /* globalna sjena */
+  color:inherit;
+}
+
+a:hover{
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* Slika kao background; ili .ph kao placeholder */
+.tile-media{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  will-change: transform;
+}
+
+
+/* ======================================================
+   KONCEPTUALNE ANALIZE – minimalistički showcase stil
+   ====================================================== */
+
+.concept-showcase {
+  background: #fafafa;
+  padding-top: var(--pad-m);
+  padding-bottom: var(--pad-m);
+}
+
+@media (min-width:1200px){
+  .concept-showcase {
+    padding-top: var(--pad-d);
+    padding-bottom: var(--pad-d);
+  }
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 32px;
+}
+
+/* Kartica (tamna na svijetloj podlozi) */
+.concept-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--shadow-md);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  color: inherit;
+}
+
+.concept-card:hover {
+  transform: translateY(0px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  border-color: rgba(58,141,255,.25);
+}
+
+/* Vizual */
+.concept-media {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #111;
+}
+
+.concept-media.ph::after {
+  content: "SLIKA";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .25em;
+  opacity: .35;
+}
+
+/* Overlay i labela */
+.concept-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.7) 100%);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.concept-label {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.concept-label h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: #fff;
+}
+
+.concept-label .concept-sub {
+  margin: 0;
+  font-size: clamp(13px, 1.4vw, 14px);
+  color: #cfd2da;
+}
+
+/* Hover reveal */
+.concept-card:hover .concept-overlay,
+.concept-card:focus-visible .concept-overlay {
+  opacity: 1;
+}
+
+.concept-card:hover .concept-label,
+.concept-card:focus-visible .concept-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fokus obrub */
+.concept-card:focus-visible {
+  outline: 3px solid var(--cold-blue);
+  outline-offset: 3px;
+}
+
+/* Touch uređaji – prikaz labela stalno */
+body.is-touch .concept-overlay { opacity: .85; }
+body.is-touch .concept-label { opacity: 1; transform: none; }
+
+/* Responsive */
+@media (max-width:1000px){
+  .concept-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width:640px){
+  .concept-grid { grid-template-columns: 1fr; }
+  .concept-card { aspect-ratio: 16 / 10; }
+}
+
+
+/* ---------------------------------------
+   Konceptualna rješenja (section #work)
+---------------------------------------- 
+#work{
+  padding-top:var(--section-m);
+  padding-bottom:var(--section-m);
+}
+@media (min-width:1200px){
+  #work{
+    padding-top:var(--section-d);
+    padding-bottom:var(--section-d);
+  }
+}
+
+/* Case layout 
+.case{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:32px;
+  align-items:center;
+}
+.case + .case{ margin-top:48px; }
+.case .ph{ height:300px; }
+.meta{ color:#6b6b76; font-size:14px; }
+.case-actions{ display:flex; gap:12px; margin-top:16px; }
+.cta--sm{ padding:10px 18px; font-weight:700; }
+
+/* Kompaktni case 
+.case--compact .ph{ height:240px; }
+.case--compact .meta{ font-size:13px; }
+.case--compact .case-actions{ margin-top:12px; }
+
+/* ---------------------------------------
+   Dodatni elementi case stranica
+---------------------------------------- */
+.cs-section-head { margin-bottom: 0; }
+.cs-eyebrow{
+  font-family: var(--font-display);
+  letter-spacing: .08em;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.cs-hero-lead{ max-width:70ch; }
+
+/* Liste u caseu */
+.cs-list{ margin:0; padding-left:18px; }
+.cs-list li{ margin:6px 0; }
+
+/* Vizuali sekcije */
+.visuals-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.visuals-grid.cs-show{ gap:20px; }
+.visuals-grid.cs-show .ph{ height:220px; }
+.visuals-grid.cs-show .ph[data-tall]{ height:340px; }
+
+/* Metrike */
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.metric{
+  border:1px solid rgba(11, 11, 12, .08);
+  border-radius:14px;
+  padding:18px;
+  background:#fff;
+  text-align:center;
+}
+.metric .num{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(28px, 4.2vw, 44px);
+  line-height:1.1;
+  color:var(--black);
+}
+.metric .lbl{
+  color:#6b6b76;
+  font-size:14px;
+}
+
+/* Zaključak + pager */
+.cs-conclusion{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:24px;
+  align-items:center;
+}
+.cs-conclusion .ph{ height:300px; }
+
+.cs-pager{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  align-items:center;
+}
+.cs-pager a{ justify-content:flex-start; }
+.cs-pager .next{ justify-content:flex-end; text-align:right; }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* ≤ 1100px */
+@media (max-width:1100px){
+  .case{ grid-template-columns:1fr; }
+  .case .ph{ order:-1; height:260px; }
+}
+
+/* ≤ 1000px */
+@media (max-width:1000px){
+  .hero{ padding:48px 0; min-height:auto; }
+  .hero .inner{ grid-template-columns:1fr; }
+  .hero-visual{ height:260px; order:-1; }
+
+  .dark-grid{ grid-template-columns:1fr 1fr; }
+}
+
+/* ≤ 840px – visuals u 2 kolone */
+@media (max-width:840px){
+  .visuals-grid{ grid-template-columns:1fr 1fr; }
+}
+
+/* ≤ 640px – sve 1 kolona */
+@media (max-width:640px){
+  .dark-grid{ grid-template-columns:1fr; }
+  .metrics-grid{ grid-template-columns:1fr; }
+  .visuals-grid{ grid-template-columns:1fr; }
+  .visuals-grid.cs-show .ph{ height:180px; }
+  .visuals-grid.cs-show .ph[data-tall]{ height:260px; }
+}
+
+/* ≥ 1200px – fino skaliranje tipografije hero sekcije */
+@media (min-width:1200px){
+  .hero .tagline{ font-size:24px; }
+  .hero .h1{ font-size:64px; }
+}

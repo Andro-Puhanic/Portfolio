@@ -1,0 +1,251 @@
+
+:root {
+  --ja-green-dark: #0e4e3e;     
+  --ja-green-mid: #3e7164;      
+  --ja-green-soft: #6e948b;    
+  --ja-green-pale: #9eb8b2;  
+
+  --ja-cream: #e4e1c8;     
+  --ja-sand: #c5a67c;          
+  --ja-offwhite: #fef4e9;      
+}
+
+
+.cs-hero{
+  height: 120vh;
+  width:auto;
+  background-position: center top;
+  background-size: cover;
+  background-image: url("/assets/IMAGES/JAMSTVO/FOTO/Brochure_Inner_Page_Mockup.webp");
+  margin-bottom: 15vh;
+}
+
+
+
+.cs-logo-original{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  background-color: var(--ja-green-dark);
+  margin-bottom: 15vh;
+}
+
+.cs-logo-original svg{
+  max-width: 75%;
+  height: auto;
+  fill: var(--ja-cream);
+}
+
+
+
+.cs-project-description{
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  column-gap: var(--gap-small);
+  margin-bottom: 15vh;
+}
+
+
+
+.process-section {
+  max-width: 1400px;
+  margin-bottom: 15vh;
+}
+
+.process-title {
+  margin-bottom: var(--gap-medium);
+}
+
+.process-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.process-card {
+  max-width: 350px;
+  padding: 16px;
+  border: 3px solid var(--cold-blue);
+  border-radius: 4px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.495);
+  transition: all .2s ease;
+}
+
+.process-card-title {
+  margin-bottom: var(--gap-xsmall);
+}
+
+.process-card-text {
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 980px) {
+  .process-columns {
+    flex-direction: column;
+    gap: 32px;
+    max-width: fit-content;
+  }
+
+  .process-card {
+    max-width: fit-content;
+  }
+}
+
+
+.logo-construction{
+    background-color: var(--ja-green-dark);
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-guidelines svg{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+
+
+
+.cs-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2,1fr);
+  margin-bottom: 15vh;
+}
+
+.cs-logo-grid .item {
+  padding: 40px;
+  display: flex;              
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.cs-logo-grid .item svg {
+  width:100%;        
+  height: auto;         
+  display: block;
+}
+
+.cs-logo-grid .item.one {
+  background-color: var(--ja-green-dark);
+}
+.cs-logo-grid .item.one svg{
+  fill: var(--ja-cream);
+    max-width: 300px; 
+}
+
+.cs-logo-grid .item.two {
+  background-color: var(--ja-offwhite);
+}
+.cs-logo-grid .item.two svg{
+  fill: var(--ja-green-dark);
+    max-width: 300px; 
+}
+
+.cs-logo-grid .item.three {
+  background-color: var(--ja-green-dark);
+}
+.cs-logo-grid .item.three svg{
+    fill: var(--ja-cream);
+    max-width: 450px; 
+}
+
+.cs-logo-grid .item.four {
+    background-color: var(--ja-offwhite);
+}
+.cs-logo-grid .item.four svg{
+    fill: var(--ja-green-dark);
+    max-width: 450px; 
+}
+
+
+
+.question-mockups{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15vh;
+}
+
+
+
+.five-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.five-item {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.five-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Middle full-width image */
+.five-wide {
+  grid-column: 1 / -1;
+  height: 100vh;
+}
+
+
+
+
+
+/*====MOBILE====*/
+
+
+@media (max-width: 768px) {
+
+  .cs-project-description{
+        gap: var(--gap-small);
+        max-width: 95%;
+  }
+
+
+
+   .cs-logo-grid {
+        grid-template-columns: 1fr;
+  }
+
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+
+
+
+    .five-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+  }
+
+    .five-item,
+    .five-wide {
+        height: 60vh;
+    }
+
+    .five-wide {
+        grid-column: auto;
+    }
+
+}
