@@ -203,13 +203,18 @@ section:first-of-type{padding-top:48px!important}
 .showcase-dark{background:#0f1115;color:#eaeaf2}
 
 /* --- FOOTER + CTA -------------------------------------------------------- */
+.footer-info{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .footer-cta{
   background:linear-gradient(180deg,var(--soft-sand),var(--white));
   padding:64px 0;
 }
 .footer-cta-inner{
-  display:grid;
-  grid-template-columns:1fr auto;
+  display:flex;
+  flex-direction: column-reverse;
   align-items:center;
   gap:24px;
 }

@@ -15,14 +15,17 @@
 
 }
 
-.cs-hero {
+
+.cs-hero{
   height: 100vh;
-  width: auto;
+  width:auto;
   background-position: center;
   background-size: cover;
-  background-image: url("../../assets/IMAGES/SHADOW/FOTO/Glass_Coffee_Cup_Mockup.webp");
+  background-image: url("/assets/IMAGES/SHADOW/FOTO/Glass_Coffee_Cup_Mockup.webp");
   margin-bottom: 15vh;
 }
+
+
 
 .cs-project-description{
   display: flex;
