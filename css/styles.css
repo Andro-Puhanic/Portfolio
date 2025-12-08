@@ -543,10 +543,10 @@ footer{
   .brand{margin-left:var(--pad-m)}
   .star-btn{margin-right:var(--pad-m)}
   .footer-inner {
-    flex-direction: column;      /* jedan ispod drugog */
+    flex-direction: column-reverse;      /* jedan ispod drugog */
     align-items: center;         /* centriraj horizontalno */
     text-align: center;          /* centriraj tekst u <small> */
-    gap: 24px;
+    gap: 5vh;
   }
 
   .footer-links {

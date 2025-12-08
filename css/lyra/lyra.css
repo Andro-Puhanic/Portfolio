@@ -52,7 +52,6 @@
 .cs-logo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  margin-bottom: 15vh;
 }
 
 .cs-logo-grid .item {
@@ -127,6 +126,7 @@
 .lyra-creation{
   color: var(--white);
   background-color: var(--black);
+  margin-bottom: 15vh;
 }
 
 .lyra-description{
@@ -171,6 +171,13 @@
   font-size: 24px;
 }
 
+.question-mockups{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+
 
 
 .gallery {
@@ -184,6 +191,10 @@
 .gallery-item {
   margin: 0;
   overflow: hidden;
+}
+
+.gallery-item img.mobile-img {
+  display: none;
 }
 
 .gallery-item img {
@@ -244,11 +255,20 @@
 
 @media (max-width: 768px) {
 
+  .cs-hero{
+    height: 80vh;
+    background-image: url("../../assets/IMAGES/LYRA/FOTO/Large_City_Banner_Mockup.webp");
+  }
+
   .cs-project-description{
     column-gap: var(--gap-small);
     max-width: 95%;
   }
 
+  .cs-logo-original{
+    height: 50vh;
+    max-height:500px;
+  }
 
 
   .cs-logo-grid {
@@ -293,6 +313,14 @@
   .gallery {
     grid-template-columns: 1fr;  /* 1 stupac na mobile */
     row-gap: 24px;
+  }
+
+  .gallery-item img.mobile-img {
+    display: block;
+  }
+
+  .gallery-item img.desktop-img {
+    display: none;
   }
 
   /* Reset grid-span za 1. i 4. */

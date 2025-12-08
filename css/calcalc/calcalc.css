@@ -240,9 +240,18 @@
 
 @media (max-width: 768px) {
 
+  .cs-hero{
+    height: 80vh;
+  }
+
   .cs-project-description{
     gap: var(--gap-small);
     max-width: 95%;
+  }
+
+  .cs-logo-original{
+    height: 50vh;
+    max-height:500px;
   }
 
 

@@ -241,15 +241,40 @@
 
 @media (max-width: 768px) {
 
+  .cs-hero{
+    height: 80vh;
+  }
+
   .cs-project-description{
     gap: var(--gap-small);
     max-width: 95%;
   }
 
+  .cs-logo-original{
+    height: 50vh;
+    max-height:500px;
+  }
 
 
    .cs-logo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .split-section-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .creation-display{
+    align-items: baseline;
+    justify-content: baseline;
+    margin-bottom: 15vh;
+  }
+
+  .creation-image{
+    max-height: 50vh;
   }
 
 
@@ -257,14 +282,29 @@
   .gallery {
     grid-template-columns: 1fr;
     row-gap: 16px;
+    max-width: 800px;
   }
 
-  .gallery-item,
-  .gallery-item:nth-child(1),
-  .gallery-item:nth-child(4),
-  .gallery-item:nth-child(7) {
-    height: 60vh;
-    grid-column: auto;
-  }
+  .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Standard height items */
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(7),
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(8),
+.gallery-item:nth-child(9) {
+  height: 50vh;
+  object-position: center top;
+}
+
 
 }

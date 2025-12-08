@@ -5,10 +5,12 @@
 }
 
 .cs-hero {
+    background-image: url("../../assets/IMAGES/SVAROG/FOTO/DSC07234-Enhanced-NR.webp");
+    background-position: center;
+    background-size: cover;
     height: 100vh;
     width: 100%;
-    margin-bottom: 15vh;
-    position: relative;        /* omogućuje apsolutno centriranje slike */
+    margin-bottom: 15vh;      /* omogućuje apsolutno centriranje slike */
     overflow: hidden;
 }
 
@@ -75,8 +77,9 @@
 .web-link{
     width: 100%;
     height: auto;
-    font-size: clamp(8rem, -7.5rem + 28vw, 35rem);
     font-weight: 700 ;
+    font-size: clamp(2rem, 6vw, 8vh);
+    margin-bottom: 5vh;
 
 }
 
@@ -91,14 +94,13 @@
 
 
 
-
-
-
 @media (max-width: 768px) {
 
-    .cs-hero {
-        height: auto;
-        width: 100%;            /* dopušta slici da se prirodno smanji */
+    .cs-hero{
+        height: 80vh;
+        background-size: cover;
+        background-position: top center;
+        max-height: 400px;
     }
 
     .cs-hero img {
@@ -111,7 +113,7 @@
     }
 
     .cs-project-description{
-        gap: var(--gap-small);
+        gap: var(--gap-xsmall);
         max-width: 95%;
     }
 
@@ -119,13 +121,6 @@
         grid-template-columns: 1fr;
         gap: 0;
     }
-
-
-
- 
-
-
-
 
 
 
