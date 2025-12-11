@@ -70,7 +70,7 @@
   background: #fff;
   border: 1px solid rgba(11, 11, 12, .08);
   border-radius: var(--rd-lg);
-  padding: 32px;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -173,15 +173,6 @@
   outline: none;
 }
 
-/* Validacija */
-.fancy-input.is-invalid .fancy-input__field {
-  border-color: #d93025;
-  box-shadow: 0 0 0 5px rgba(217, 48, 37, .15);
-}
-
-.fancy-input.is-invalid .fancy-input__label {
-  color: #d93025;
-}
 
 /* Gumbi */
 .fancy-button-group {

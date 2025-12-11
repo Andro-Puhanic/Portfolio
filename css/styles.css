@@ -351,15 +351,6 @@ footer{
   outline: none;
 }
 
-/* Validacija */
-.footer-contact-input.is-invalid .footer-contact-input-field {
-  border-color: #d93025;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.495);
-}
-
-.footer-contact-input.is-invalid .footer-contact-input-label {
-  color: #d93025;
-}
 
 /* GUMBI */
 .footer-contact-button-group {
@@ -523,10 +514,21 @@ footer{
 @media (min-width:900px){
   .nav-icon-link span{display:inline}
 }
-@media (min-width:1024px){
+@media (min-width:1040px){
   .nav-links{display:flex}
   .star-btn{display:none}
   .menu-overlay{display:none!important}
+}
+
+@media (max-width: 1040px){
+  .footer-links{display: flex; width: 100%;}
+  .footer-contact-card{width: 100vw;}
+  .footer-inner {
+    flex-direction: column-reverse;      /* jedan ispod drugog */
+    align-items: center;         /* centriraj horizontalno */
+    text-align: center;          /* centriraj tekst u <small> */
+    gap: 5vh;
+  }
 }
 @media (min-width:768px){
   .container{padding:10px var(--pad-t)}
